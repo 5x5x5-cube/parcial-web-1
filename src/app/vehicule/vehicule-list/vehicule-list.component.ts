@@ -9,6 +9,7 @@ import { Vehicule } from '../vehicule';
 })
 export class VehiculeListComponent implements OnInit {
   vehicules: Array<Vehicule> = [];
+  brands: [Vehicule['marca'], number][] = [];
 
   constructor(private vehiculeService: VehiculeService) {}
 
@@ -19,6 +20,18 @@ export class VehiculeListComponent implements OnInit {
   getVehicule() {
     this.vehiculeService.getVehicules().subscribe((vehicules) => {
       this.vehicules = vehicules;
+
+      const groupedBrands = vehicules.reduce((groupedData, vehicule) => {
+        if (!groupedData[vehicule.marca]) {
+          groupedData[vehicule.marca] = 0;
+        }
+
+        groupedData[vehicule.marca]++;
+
+        return groupedData;
+      }, {} as { [key: Vehicule['marca']]: number });
+
+      this.brands = Object.entries(groupedBrands);
     });
   }
 }

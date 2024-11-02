@@ -8,22 +8,26 @@
 <hr class="my-1 border-top border-dark">
 <img src="/assets/images/top-banner.png" alt="top banner" width="100%">
 <hr class="my-4 border-top border-dark">
-
-<table class="table table-sm">
-  <thead class="table-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Marca</th>
-      <th scope="col">Linea</th>
-      <th scope="col">Modelo</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let vehicule of vehicules">
-      <th scope="row">{{vehicule.id}}</th>
-      <td>{{vehicule.marca}}</td>
-      <td>{{vehicule.linea}}</td>
-      <td>{{vehicule.modelo}}</td>
-    </tr>
-  </tbody>
-</table>
+<section class="container m-4">
+  <table class="table table-sm">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Linea</th>
+        <th scope="col">Modelo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vehicule of vehicules">
+        <th scope="row">{{vehicule.id}}</th>
+        <td>{{vehicule.marca}}</td>
+        <td>{{vehicule.linea}}</td>
+        <td>{{vehicule.modelo}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="m-0" *ngFor="let brand of brands">
+    Total {{brand[0]}} :  {{brand[1]}}
+  </p>
+</section>
