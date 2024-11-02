@@ -1,0 +1,29 @@
+<nav class="navbar bg-body-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="/assets/images/logo.png" alt="tu sengundazo" width="30" height="24">
+    </a>
+  </div>
+</nav>
+<hr class="my-1 border-top border-dark">
+<img src="/assets/images/top-banner.png" alt="top banner" width="100%">
+<hr class="my-4 border-top border-dark">
+
+<table class="table table-sm">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Linea</th>
+      <th scope="col">Modelo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vehicule of vehicules">
+      <th scope="row">{{vehicule.id}}</th>
+      <td>{{vehicule.marca}}</td>
+      <td>{{vehicule.linea}}</td>
+      <td>{{vehicule.modelo}}</td>
+    </tr>
+  </tbody>
+</table>
